@@ -1,0 +1,6 @@
+framework module Lambda_Alert {
+  umbrella header "Lambda-Alert-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,26 @@
+//
+// Prefix header for all source files of the 'Golf' target in the 'Golf' project
+//
+
+#import <Availability.h>
+
+#define MR_SHORTHAND
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+
+    #include "YGAvailability.h"
+    #include "YGCommon.h"
+    #include "Constants.h"
+    #include "YGBaseCategories.h"
+    #include "YGStatistics.h"
+
+    #import "API.h"
+    #import "Utilities.h"
+
+    #import "GolfAppDelegate.h"
+    #import "LoginManager.h"
+
+    #import <SVProgressHUD/SVProgressHUD.h>
+#endif

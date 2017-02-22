@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "2D8213520DB3D7A7AEC3E71A87A4C06888CE8A95",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "6C7A2CCB8BB66DAA56E17FFFD0BDD95D25F578D6" : 9223372036854775807,
+    "2D8213520DB3D7A7AEC3E71A87A4C06888CE8A95" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "D73CA722-B59F-40A3-8493-EA1758AB7815",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "6C7A2CCB8BB66DAA56E17FFFD0BDD95D25F578D6" : "",
+    "2D8213520DB3D7A7AEC3E71A87A4C06888CE8A95" : "SolarPowerSystem\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "SolarPowerSystem",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "SolarPowerSystem\/SolarPowerSystem.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/developforapple\/SolarPowerSystem.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2D8213520DB3D7A7AEC3E71A87A4C06888CE8A95"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/alcatraz\/Alcatraz",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6C7A2CCB8BB66DAA56E17FFFD0BDD95D25F578D6"
+    }
+  ]
+}

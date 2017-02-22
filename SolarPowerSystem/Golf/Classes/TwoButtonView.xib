@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment version="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TwoButtonView">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="119"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MESSAGE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SYt-rU-auB">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Ayn-ee-aQE"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t43-fq-vdg" customClass="MyButton">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="jWl-Pa-3Jk"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="预约该时段">
+                        <color key="titleColor" red="0.14117647059999999" green="0.61568627450000002" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="highlightedColor">
+                            <color key="value" red="0.32584697008132935" green="0.32583719491958618" blue="0.32584273815155029" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="btnAction1:" destination="iN0-l3-epB" eventType="touchUpInside" id="0uf-gT-Q3h"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="324-Mf-KFp" customClass="MyButton">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="zr8-tT-1mT"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="不开放预约">
+                        <color key="titleColor" red="0.14117647059999999" green="0.61568627450000002" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="highlightedColor">
+                            <color key="value" red="0.32584697008132935" green="0.32583719491958618" blue="0.32584273815155029" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="btnAction2:" destination="iN0-l3-epB" eventType="touchUpInside" id="Oa4-5r-kqP"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sGi-BG-PRd" userLabel="line">
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="GL6-WA-Yii"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vPd-np-ZMC" userLabel="line">
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="lP9-Hn-Q6l"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="324-Mf-KFp" firstAttribute="top" secondItem="vPd-np-ZMC" secondAttribute="bottom" constant="-1" id="39z-7c-QhG"/>
+                <constraint firstItem="t43-fq-vdg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="7SI-rn-wkj"/>
+                <constraint firstAttribute="trailing" secondItem="sGi-BG-PRd" secondAttribute="trailing" id="CWb-VU-0xy"/>
+                <constraint firstItem="sGi-BG-PRd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="DXA-M3-vQN"/>
+                <constraint firstItem="vPd-np-ZMC" firstAttribute="top" secondItem="t43-fq-vdg" secondAttribute="bottom" constant="-1" id="Og6-gt-2a9"/>
+                <constraint firstItem="SYt-rU-auB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Pd4-fI-TPn"/>
+                <constraint firstAttribute="trailing" secondItem="324-Mf-KFp" secondAttribute="trailing" id="QS5-Pq-6lN"/>
+                <constraint firstAttribute="trailing" secondItem="vPd-np-ZMC" secondAttribute="trailing" id="ers-e5-8dg"/>
+                <constraint firstItem="vPd-np-ZMC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="evf-Uj-Hg9"/>
+                <constraint firstItem="SYt-rU-auB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="fWE-Dy-6W8"/>
+                <constraint firstItem="sGi-BG-PRd" firstAttribute="top" secondItem="SYt-rU-auB" secondAttribute="bottom" constant="6" id="gzt-vf-mAE"/>
+                <constraint firstItem="sGi-BG-PRd" firstAttribute="top" secondItem="SYt-rU-auB" secondAttribute="bottom" id="iUU-0J-6X4"/>
+                <constraint firstAttribute="trailing" secondItem="t43-fq-vdg" secondAttribute="trailing" id="lf8-v5-feu"/>
+                <constraint firstItem="t43-fq-vdg" firstAttribute="top" secondItem="sGi-BG-PRd" secondAttribute="bottom" constant="-1" id="qdH-G1-6Rn"/>
+                <constraint firstAttribute="trailing" secondItem="SYt-rU-auB" secondAttribute="trailing" id="sKP-yg-pod"/>
+                <constraint firstItem="324-Mf-KFp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="u4O-RF-D0H"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="gzt-vf-mAE"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="btn1" destination="t43-fq-vdg" id="l3f-9p-753"/>
+                <outlet property="btn2" destination="324-Mf-KFp" id="Z7z-AA-hqE"/>
+                <outlet property="labelMessage" destination="SYt-rU-auB" id="np3-Od-LpX"/>
+            </connections>
+            <point key="canvasLocation" x="-97" y="262.5"/>
+        </view>
+    </objects>
+</document>

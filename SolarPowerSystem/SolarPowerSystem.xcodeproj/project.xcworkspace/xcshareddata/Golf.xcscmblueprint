@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "ba17b0d3-1819-de45-985d-7177755615bf",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "ba17b0d3-1819-de45-985d-7177755615bf++6302",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "ba17b0d3-1819-de45-985d-7177755615bf" : {
+    "ba17b0d3-1819-de45-985d-7177755615bf++6302" : {
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "ba17b0d3-1819-de45-985d-7177755615bf" : 0
+    "ba17b0d3-1819-de45-985d-7177755615bf++6302" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "F19C38D0-4BC8-4DE6-8553-3CFDF117DAF6",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "ba17b0d3-1819-de45-985d-7177755615bf" : "golfplusiosresp\/"
+    "ba17b0d3-1819-de45-985d-7177755615bf++6302" : "golf_20160413\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Golf",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "trunk\/golf_20160413\/Golf.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Golf.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/192.168.0.161\/svn\/golfplusiosresp",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "ba17b0d3-1819-de45-985d-7177755615bf"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "ba17b0d3-1819-de45-985d-7177755615bf++6302"
+    }
+  ]
+}

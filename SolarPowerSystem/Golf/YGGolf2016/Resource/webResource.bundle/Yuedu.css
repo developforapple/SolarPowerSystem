@@ -1,0 +1,25 @@
+* {
+    margin:0
+}
+body {
+    padding:18px;
+}
+img,video {
+    max-width:100% !important;
+    height:auto !important;
+    margin-bottom:18px;
+}
+p,section {
+    -webkit-font-smoothing:subpixel-antialiased;
+    font-family:'PingFang SC';
+    font-weight:300;
+    text-align: justify;
+    line-height:28px;
+    color:#333;
+    font-size:18px;
+    margin-bottom:18px;
+}
+a {
+    text-decoration:none;
+    color:inherit;
+}

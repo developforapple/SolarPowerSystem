@@ -1,0 +1,130 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - DZNEmptyDataSet (1.8.1)
+  - DZNSegmentedControl (1.3.3)
+  - EAIntroView (2.9.0):
+    - EARestrictedScrollView (~> 1.1.0)
+  - EARestrictedScrollView (1.1.0)
+  - IQKeyboardManager (4.0.7)
+  - JCAlertView (1.1.5)
+  - JZNavigationExtension (1.5.0.1)
+  - KDCycleBannerView (1.1.1):
+    - SDWebImage
+  - Lambda-Alert (1.0.1)
+  - M13BadgeView (1.0.4)
+  - MJRefresh (3.1.0)
+  - MXParallaxHeader (0.5.1)
+  - ReactiveCocoa (2.5):
+    - ReactiveCocoa/UI (= 2.5)
+  - ReactiveCocoa/Core (2.5):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.5)
+  - ReactiveCocoa/UI (2.5):
+    - ReactiveCocoa/Core
+  - RegexKitLite (4.0)
+  - SDCycleScrollView (1.65):
+    - SDWebImage (~> 3.7)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
+  - SVProgressHUD (2.0.3)
+  - UICountingLabel (1.4.0)
+  - WeiboSDK (3.1.4)
+  - YYCache (1.0.4)
+  - YYCategories (1.0.4):
+    - YYCategories/no-arc (= 1.0.4)
+  - YYCategories/no-arc (1.0.4)
+  - YYImage (1.0.4):
+    - YYImage/Core (= 1.0.4)
+  - YYImage/Core (1.0.4)
+  - YYModel (1.0.4)
+  - YYText (1.0.7)
+  - YYWebImage (1.0.5):
+    - YYCache
+    - YYImage
+
+DEPENDENCIES:
+  - AFNetworking
+  - DZNEmptyDataSet
+  - DZNSegmentedControl (~> 1.3.3)
+  - EAIntroView (~> 2.9.0)
+  - IQKeyboardManager
+  - JCAlertView
+  - JZNavigationExtension (from `https://github.com/JazysYu/JZNavigationExtension.git`)
+  - KDCycleBannerView
+  - Lambda-Alert (~> 1.0.1)
+  - M13BadgeView
+  - MJRefresh (= 3.1.0)
+  - MXParallaxHeader (= 0.5.1)
+  - ReactiveCocoa (= 2.5)
+  - RegexKitLite
+  - SDCycleScrollView (~> 1.65)
+  - SDWebImage
+  - SVProgressHUD
+  - UICountingLabel
+  - WeiboSDK (from `https://github.com/sinaweibosdk/weibo_ios_sdk.git`)
+  - YYCache
+  - YYCategories
+  - YYModel
+  - YYText
+  - YYWebImage
+
+EXTERNAL SOURCES:
+  JZNavigationExtension:
+    :git: https://github.com/JazysYu/JZNavigationExtension.git
+  WeiboSDK:
+    :git: https://github.com/sinaweibosdk/weibo_ios_sdk.git
+
+CHECKOUT OPTIONS:
+  JZNavigationExtension:
+    :commit: b92dcdcf203d604e4b621dda39e042a863379489
+    :git: https://github.com/JazysYu/JZNavigationExtension.git
+  WeiboSDK:
+    :commit: 3daf7147ddd0fde3b04a61d8d94327d41d0c239c
+    :git: https://github.com/sinaweibosdk/weibo_ios_sdk.git
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  DZNSegmentedControl: ecc2f31c5581cce10c4d766ea4bd2d0781814c1f
+  EAIntroView: 76f68cc56242f2e25359419e6ecc2344ee7e1756
+  EARestrictedScrollView: b0c2a3f92fb2610bb44d71c5e4893777c89e45ef
+  IQKeyboardManager: 69002bb4fea60596b710e57d426abc00e5063630
+  JCAlertView: c65a7b298b8b497b3db783d82f719b88f4914869
+  JZNavigationExtension: 7b95d2b1c48846b8bedcb40d767448f14cb9a0b7
+  KDCycleBannerView: 6dbac2cda6b1a6f4e27b65d66249ecd966403b8b
+  Lambda-Alert: dadd1e0c1d6a63f8c8300f7aad9f263101c1ccba
+  M13BadgeView: 700dd0714fdc837c0cf1c8c004454963ec22441f
+  MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
+  MXParallaxHeader: b40fabd42d1bb76f6d1a713ceae5628f69241bd6
+  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+  RegexKitLite: c0e4c12e6e7de0769f3a3ed679f0f61604170661
+  SDCycleScrollView: f72904c77698a7f93a41bcbbc2d78b073bf7326c
+  SDWebImage: '098e97e6176540799c27e804c96653ee0833d13c'
+  SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
+  UICountingLabel: ed5ce5b6d5ef278ff40d99cfa49577a30ab0c87b
+  WeiboSDK: bceab625ec59b7039ba721cc4ba9f5868804f63e
+  YYCache: 8105b6638f5e849296c71f331ff83891a4942952
+  YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
+  YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
+  YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
+
+PODFILE CHECKSUM: 3e60d7acb581b2ed4d726fb8677419660c3a12ff
+
+COCOAPODS: 1.2.0.beta.1

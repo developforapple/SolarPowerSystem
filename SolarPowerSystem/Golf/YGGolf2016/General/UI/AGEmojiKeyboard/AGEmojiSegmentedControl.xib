@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment version="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="AGEmojiSegmentedControl">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="37"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CNL-22-cie">
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y0M-3t-b9k" customClass="MyButton">
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" image="icon_recent"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="selectedColor">
+                                    <color key="value" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="highlightedColor">
+                                    <color key="value" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="btnAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="BTM-e6-bEN"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9hu-ek-5Xg" customClass="MyButton">
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" image="icon_face"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="selectedColor">
+                                    <color key="value" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="highlightedColor">
+                                    <color key="value" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="btnAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="RyP-3x-OaH"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sY1-xO-Hqn" customClass="MyButton">
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" image="icon_bell"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="selectedColor">
+                                    <color key="value" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="highlightedColor">
+                                    <color key="value" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="btnAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="aw9-NU-ZZL"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hqO-0s-8r5" customClass="MyButton">
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" image="icon_flower"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="selectedColor">
+                                    <color key="value" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="highlightedColor">
+                                    <color key="value" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="btnAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="qjW-lq-Fzp"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rX3-BQ-lii" customClass="MyButton">
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" image="icon_car"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="selectedColor">
+                                    <color key="value" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="highlightedColor">
+                                    <color key="value" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="btnAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="kzt-Pq-sWy"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6N4-o4-Rpz" customClass="MyButton">
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" image="icon_characters"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="selectedColor">
+                                    <color key="value" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="highlightedColor">
+                                    <color key="value" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="btnAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="8Ig-hI-JGg"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQC-U9-PBm" userLabel="Send" customClass="MyButton">
+                            <color key="backgroundColor" red="0.14117647059999999" green="0.61568627450000002" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="发送"/>
+                            <state key="disabled">
+                                <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="highlightedColor">
+                                    <color key="value" red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="disabledColor">
+                                    <color key="value" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="sendAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="oKs-na-lYt"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="rX3-BQ-lii" firstAttribute="width" secondItem="hqO-0s-8r5" secondAttribute="width" id="0uP-YV-Eqa"/>
+                        <constraint firstAttribute="bottom" secondItem="6N4-o4-Rpz" secondAttribute="bottom" id="20z-TT-qhf"/>
+                        <constraint firstItem="Y0M-3t-b9k" firstAttribute="top" secondItem="CNL-22-cie" secondAttribute="top" id="3TZ-Gk-2YV"/>
+                        <constraint firstItem="9hu-ek-5Xg" firstAttribute="top" secondItem="CNL-22-cie" secondAttribute="top" id="45i-uf-Coa"/>
+                        <constraint firstItem="9hu-ek-5Xg" firstAttribute="leading" secondItem="Y0M-3t-b9k" secondAttribute="trailing" id="ARW-OO-VHh"/>
+                        <constraint firstItem="rX3-BQ-lii" firstAttribute="leading" secondItem="hqO-0s-8r5" secondAttribute="trailing" id="AVh-RT-Vve"/>
+                        <constraint firstAttribute="bottom" secondItem="eQC-U9-PBm" secondAttribute="bottom" id="FGI-iR-eIA"/>
+                        <constraint firstItem="Y0M-3t-b9k" firstAttribute="leading" secondItem="CNL-22-cie" secondAttribute="leading" id="GeT-fn-qWP"/>
+                        <constraint firstItem="6N4-o4-Rpz" firstAttribute="leading" secondItem="rX3-BQ-lii" secondAttribute="trailing" id="HN3-uh-f25"/>
+                        <constraint firstItem="hqO-0s-8r5" firstAttribute="top" secondItem="CNL-22-cie" secondAttribute="top" id="NGW-hy-O4J"/>
+                        <constraint firstItem="eQC-U9-PBm" firstAttribute="leading" secondItem="6N4-o4-Rpz" secondAttribute="trailing" id="NSA-nI-Nen"/>
+                        <constraint firstItem="hqO-0s-8r5" firstAttribute="leading" secondItem="sY1-xO-Hqn" secondAttribute="trailing" id="P6J-sK-Jij"/>
+                        <constraint firstItem="eQC-U9-PBm" firstAttribute="top" secondItem="CNL-22-cie" secondAttribute="top" id="Rzh-gN-pAY"/>
+                        <constraint firstItem="sY1-xO-Hqn" firstAttribute="leading" secondItem="9hu-ek-5Xg" secondAttribute="trailing" id="T8T-Yf-oHg"/>
+                        <constraint firstAttribute="bottom" secondItem="rX3-BQ-lii" secondAttribute="bottom" id="YCi-b3-g3A"/>
+                        <constraint firstItem="sY1-xO-Hqn" firstAttribute="width" secondItem="9hu-ek-5Xg" secondAttribute="width" id="ZLf-eB-YTE"/>
+                        <constraint firstItem="6N4-o4-Rpz" firstAttribute="top" secondItem="CNL-22-cie" secondAttribute="top" id="ZLh-Jh-oot"/>
+                        <constraint firstAttribute="height" constant="37" id="aIO-Zp-Udj"/>
+                        <constraint firstAttribute="bottom" secondItem="9hu-ek-5Xg" secondAttribute="bottom" id="b3y-Pi-Kxy"/>
+                        <constraint firstItem="eQC-U9-PBm" firstAttribute="width" secondItem="6N4-o4-Rpz" secondAttribute="width" id="bF1-Fg-ozH"/>
+                        <constraint firstItem="6N4-o4-Rpz" firstAttribute="width" secondItem="rX3-BQ-lii" secondAttribute="width" id="gJM-fN-R5f"/>
+                        <constraint firstItem="sY1-xO-Hqn" firstAttribute="top" secondItem="CNL-22-cie" secondAttribute="top" id="hUh-4h-ASf"/>
+                        <constraint firstItem="Y0M-3t-b9k" firstAttribute="width" secondItem="eQC-U9-PBm" secondAttribute="width" id="iaF-pq-cCA"/>
+                        <constraint firstAttribute="bottom" secondItem="Y0M-3t-b9k" secondAttribute="bottom" id="lMo-bq-Sat"/>
+                        <constraint firstAttribute="bottom" secondItem="sY1-xO-Hqn" secondAttribute="bottom" id="ncK-Ca-oqa"/>
+                        <constraint firstItem="9hu-ek-5Xg" firstAttribute="width" secondItem="Y0M-3t-b9k" secondAttribute="width" id="oNl-Pq-vba"/>
+                        <constraint firstAttribute="trailing" secondItem="eQC-U9-PBm" secondAttribute="trailing" id="sIs-SH-Mys"/>
+                        <constraint firstAttribute="bottom" secondItem="hqO-0s-8r5" secondAttribute="bottom" id="wVo-cg-V3B"/>
+                        <constraint firstItem="rX3-BQ-lii" firstAttribute="top" secondItem="CNL-22-cie" secondAttribute="top" id="xNA-dq-unT"/>
+                        <constraint firstItem="hqO-0s-8r5" firstAttribute="width" secondItem="sY1-xO-Hqn" secondAttribute="width" id="xTx-py-0Ru"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="CNL-22-cie" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="8Dk-j6-srp"/>
+                <constraint firstAttribute="bottom" secondItem="CNL-22-cie" secondAttribute="bottom" id="aDU-OA-cjN"/>
+                <constraint firstAttribute="trailing" secondItem="CNL-22-cie" secondAttribute="trailing" id="b0J-bC-WzL"/>
+                <constraint firstItem="CNL-22-cie" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="hUK-93-15A"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="btnSend" destination="eQC-U9-PBm" id="D6d-V3-MQW"/>
+                <outletCollection property="btns" destination="Y0M-3t-b9k" id="8Mv-97-o4T"/>
+                <outletCollection property="btns" destination="9hu-ek-5Xg" id="Hd2-fQ-Yx9"/>
+                <outletCollection property="btns" destination="sY1-xO-Hqn" id="rZT-N3-eO1"/>
+                <outletCollection property="btns" destination="hqO-0s-8r5" id="s54-Dk-x89"/>
+                <outletCollection property="btns" destination="rX3-BQ-lii" id="UIB-2j-hSD"/>
+                <outletCollection property="btns" destination="6N4-o4-Rpz" id="JnA-DT-BeD"/>
+            </connections>
+            <point key="canvasLocation" x="585" y="208.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_bell" width="19" height="19"/>
+        <image name="icon_car" width="19" height="19"/>
+        <image name="icon_characters" width="19" height="19"/>
+        <image name="icon_face" width="19" height="19"/>
+        <image name="icon_flower" width="19" height="19"/>
+        <image name="icon_recent" width="19" height="19"/>
+    </resources>
+</document>

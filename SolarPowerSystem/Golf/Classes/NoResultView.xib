@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment version="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="NoResultView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D6S-PY-iKv">
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LABEL_TEXT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7t-Cv-zeP">
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" red="0.396078431372549" green="0.72941176470588232" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Ug-rP-fKw">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="190" id="39t-rx-LAy"/>
+                                <constraint firstAttribute="width" constant="190" id="AuQ-OS-GPy"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="p7t-Cv-zeP" secondAttribute="bottom" id="1af-ME-ejm"/>
+                        <constraint firstItem="7Ug-rP-fKw" firstAttribute="centerX" secondItem="D6S-PY-iKv" secondAttribute="centerX" id="6zI-IO-kc4"/>
+                        <constraint firstItem="7Ug-rP-fKw" firstAttribute="top" secondItem="D6S-PY-iKv" secondAttribute="top" id="KPb-i2-gYS"/>
+                        <constraint firstItem="p7t-Cv-zeP" firstAttribute="top" secondItem="7Ug-rP-fKw" secondAttribute="bottom" constant="8" id="VW8-4X-G1I"/>
+                        <constraint firstItem="p7t-Cv-zeP" firstAttribute="leading" secondItem="D6S-PY-iKv" secondAttribute="leading" constant="20" id="bnj-sg-ikZ"/>
+                        <constraint firstAttribute="trailing" secondItem="p7t-Cv-zeP" secondAttribute="trailing" constant="20" id="khr-hW-2PJ"/>
+                    </constraints>
+                </view>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BkX-1b-XcA">
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <action selector="btnPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="p42-uK-0ly"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="D6S-PY-iKv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="-7" id="72j-mZ-Sr4"/>
+                <constraint firstAttribute="trailing" secondItem="D6S-PY-iKv" secondAttribute="trailing" constant="-7" id="EiG-r0-0HV"/>
+                <constraint firstItem="BkX-1b-XcA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="WPJ-os-Uox"/>
+                <constraint firstItem="D6S-PY-iKv" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="eGM-JO-bzB"/>
+                <constraint firstAttribute="bottom" secondItem="BkX-1b-XcA" secondAttribute="bottom" id="l86-LR-Bxl"/>
+                <constraint firstItem="D6S-PY-iKv" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="qb9-IT-e4S"/>
+                <constraint firstAttribute="trailing" secondItem="BkX-1b-XcA" secondAttribute="trailing" id="uZZ-zo-bYF"/>
+                <constraint firstItem="BkX-1b-XcA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="w6A-hZ-11T"/>
+            </constraints>
+            <connections>
+                <outlet property="btn" destination="BkX-1b-XcA" id="9yU-zY-8Fs"/>
+                <outlet property="imgv" destination="7Ug-rP-fKw" id="x00-th-ocr"/>
+                <outlet property="textLabel" destination="p7t-Cv-zeP" id="Ttf-xO-Erd"/>
+            </connections>
+            <point key="canvasLocation" x="-82" y="129"/>
+        </view>
+    </objects>
+</document>

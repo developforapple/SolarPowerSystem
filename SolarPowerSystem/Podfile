@@ -1,0 +1,36 @@
+source 'https://github.com/CocoaPods/Specs.git'
+inhibit_all_warnings!
+platform :ios, '8.0'
+use_frameworks!
+target 'SolarPowerSystem'
+
+# 新加的
+pod 'DZNEmptyDataSet'           #UIScrollView空内容时的样式 https://github.com/dzenbot/DZNEmptyDataSet
+pod 'DZNSegmentedControl', '~> 1.3.3' #订单列表内使用的分段控件
+pod 'ReactiveCocoa', '2.5'             #RAC https://github.com/ReactiveCocoa/ReactiveCocoa
+pod 'MJRefresh', '3.1.0'     #MJRefresh      https://github.com/CoderMJLee/MJRefresh
+pod 'JZNavigationExtension',:git => 'https://github.com/JazysYu/JZNavigationExtension.git' #全屏返回手势+导航栏隐藏+透明度 https://github.com/JazysYu/JZNavigationExtension  这里使用github最新代码 而不是发布版本。修复了TableView手势冲突的问题
+pod 'WeiboSDK', :git => 'https://github.com/sinaweibosdk/weibo_ios_sdk.git' #微博SDK 这个是官方的github源 https://github.com/sinaweibosdk/weibo_ios_sdk
+pod 'MXParallaxHeader', '0.5.1'     #scrolLView可伸缩的header https://github.com/maxep/MXParallaxHeader
+pod 'YYCache'               #缓存            https://github.com/ibireme/YYCache
+pod 'YYText'                #YYText         https://github.com/ibireme/YYText
+pod 'YYModel'               #YYModel        https://github.com/ibireme/YYModel
+pod 'YYCategories'          #               https://github.com/ibireme/YYCategories
+pod 'YYWebImage'            #对gif的支持比 SDWebImage好。SDWebImage出4.x正式版本前的替代物
+pod 'IQKeyboardManager'
+pod 'SDCycleScrollView', '~> 1.65' #轮播banner
+pod 'UICountingLabel'       #动态数字
+
+# 原有工程里存在的
+pod 'EAIntroView', '~> 2.9.0'   #引导页 https://github.com/ealeksandrov/EAIntroView
+pod 'AFNetworking'          #AFN
+pod 'SVProgressHUD'         #SVProgressHUD  https://github.com/SVProgressHUD/SVProgressHUD
+pod 'Lambda-Alert', '~> 1.0.1' #对alert的简单封装，block来处理按钮的点击事件回调。
+pod 'M13BadgeView'          #未读红点
+pod 'RegexKitLite'          #正则表达式      http://regexkit.sourceforge.net/RegexKitLite/
+pod 'KDCycleBannerView'     #KDCycleBannerView 实现了循环滚动的 banner 和相册。 https://github.com/kingiol/KDCycleBannerView
+pod 'JCAlertView'               # 自定义任意视图弹窗动画视图 https://github.com/HJaycee/JCAlertView
+
+# 关于SDWebImage
+pod 'SDWebImage'  #4.x版本加强对GIF的支持，修复了显示gif时内存暴涨的问题。但是4.x没有正式版。pod上没有更新。所以新的代码中使用了YYWebImage代替SDWebImage显示。
+#

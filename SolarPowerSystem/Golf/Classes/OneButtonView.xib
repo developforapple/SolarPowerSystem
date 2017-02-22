@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment version="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="OneButtonView">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="79"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MESSAGE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Q3-kZ-KEP">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="0q4-xq-9Kl"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YOr-tw-Ry4" customClass="MyButton">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="RGv-6X-NkR"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="开放预约">
+                        <color key="titleColor" red="0.14117647059999999" green="0.61568627450000002" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="highlightedColor">
+                            <color key="value" red="0.32584697008132935" green="0.32583719491958618" blue="0.32584273815155029" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="btnAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="IFn-wp-Lhd"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="87a-LP-jP4" userLabel="line">
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="hbc-4y-Rhg"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="87a-LP-jP4" firstAttribute="top" secondItem="8Q3-kZ-KEP" secondAttribute="bottom" constant="-1" id="0MV-Cu-VHD"/>
+                <constraint firstAttribute="centerY" secondItem="8Q3-kZ-KEP" secondAttribute="centerY" constant="22.5" id="52W-tt-LCQ"/>
+                <constraint firstItem="8Q3-kZ-KEP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="HMX-Ed-fAH"/>
+                <constraint firstItem="8Q3-kZ-KEP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="IJ7-fa-dPq"/>
+                <constraint firstAttribute="trailing" secondItem="8Q3-kZ-KEP" secondAttribute="trailing" id="L7y-FG-Frl"/>
+                <constraint firstItem="87a-LP-jP4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ic7-31-R5o"/>
+                <constraint firstAttribute="trailing" secondItem="87a-LP-jP4" secondAttribute="trailing" id="pHa-Pd-P8N"/>
+                <constraint firstAttribute="trailing" secondItem="YOr-tw-Ry4" secondAttribute="trailing" id="pP0-VE-rC0"/>
+                <constraint firstItem="YOr-tw-Ry4" firstAttribute="top" secondItem="87a-LP-jP4" secondAttribute="bottom" constant="-1" id="rqE-zO-8l9"/>
+                <constraint firstItem="YOr-tw-Ry4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="z4Y-3Y-9kW"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="52W-tt-LCQ"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="btn" destination="YOr-tw-Ry4" id="Kmd-xX-hZn"/>
+                <outlet property="labelMessage" destination="8Q3-kZ-KEP" id="zam-mW-Nzk"/>
+            </connections>
+            <point key="canvasLocation" x="179" y="156.5"/>
+        </view>
+    </objects>
+</document>
