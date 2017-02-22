@@ -7,7 +7,6 @@
 //
 
 #import "YGMapViewCtrl.h"
-#import "ClubModel.h"
 #import "YGMapAnnotation.h"
 #import "YGThirdMapApp.h"
 #import <MapKit/MapKit.h>
@@ -21,7 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *descLabel;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *descBottomConstraint;
 
-@property (strong, nonatomic) ClubModel *club;
+//@property (strong, nonatomic) ClubModel *club;
 
 @property (assign, nonatomic) BOOL singleClub;
 @property (assign, nonatomic) BOOL descContentVisible;
@@ -44,12 +43,12 @@
     _mapView = nil;
 }
 
-- (void)setClubList:(NSArray<ClubModel *> *)clubList
-{
-    _clubList = clubList;
-    self.singleClub = clubList.count == 1;
-    self.club = [clubList firstObject];
-}
+//- (void)setClubList:(NSArray<ClubModel *> *)clubList
+//{
+//    _clubList = clubList;
+//    self.singleClub = clubList.count == 1;
+//    self.club = [clubList firstObject];
+//}
 
 #pragma mark - Region
 - (void)setupBestRegion
@@ -67,12 +66,12 @@
         __block CLLocationCoordinate2D min = CLLC2DMake(CGFLOAT_MAX, CGFLOAT_MAX);
         CLLocationCoordinate2D mid = CLLC2DMake(0, 0);
         
-        [self.clubList enumerateObjectsUsingBlock:^(ClubModel *obj, NSUInteger idx, BOOL *stop) {
-            max.latitude = MAX(max.latitude, fabs(obj.latitude));
-            max.longitude = MAX(max.longitude, fabs(obj.longitude));
-            min.latitude = MIN(min.latitude, fabs(obj.latitude));
-            min.longitude = MIN(min.longitude, fabs(obj.longitude));
-        }];
+//        [self.clubList enumerateObjectsUsingBlock:^(ClubModel *obj, NSUInteger idx, BOOL *stop) {
+//            max.latitude = MAX(max.latitude, fabs(obj.latitude));
+//            max.longitude = MAX(max.longitude, fabs(obj.longitude));
+//            min.latitude = MIN(min.latitude, fabs(obj.latitude));
+//            min.longitude = MIN(min.longitude, fabs(obj.longitude));
+//        }];
         
         mid.latitude = (max.latitude + min.latitude)/2;
         mid.longitude = (max.longitude + min.longitude)/2;
@@ -86,15 +85,16 @@
         
         animated = YES;
         
-    }else if (self.club){
-        center.latitude = fabs(self.club.latitude);
-        center.longitude = fabs(self.club.longitude);
-        // 单一球场时，调整地图范围为 5000米
-        MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(center, 5000.f, 5000.f);
-        region = [self.mapView regionThatFits:viewRegion];
-
-        animated = NO;
     }
+//    else if (self.club){
+//        center.latitude = fabs(self.club.latitude);
+//        center.longitude = fabs(self.club.longitude);
+//        // 单一球场时，调整地图范围为 5000米
+//        MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(center, 5000.f, 5000.f);
+//        region = [self.mapView regionThatFits:viewRegion];
+//
+//        animated = NO;
+//    }
     
     [self.mapView setCenterCoordinate:center animated:animated];
     [self.mapView setRegion:region animated:animated];
@@ -116,8 +116,8 @@
         annotationView.frame = CGRectMake(0, 0, 30, 30);
         annotationView.image = [UIImage imageNamed:@"pin_purple"];
     }else{
-        ClubModel *club = annotation.club;
-        NSString *title = [NSString stringWithFormat:@"%@¥%d",club.shortName,club.minPrice];
+//        ClubModel *club = annotation.club;
+//        NSString *title = [NSString stringWithFormat:@"%@¥%d",club.shortName,club.minPrice];
         annotationView.frame = CGRectMake(0, 0, 80, 14);
         annotationView.image = [UIImage imageNamed:@"blueboard"];
         
@@ -130,7 +130,7 @@
             lblTitle.minimumScaleFactor = 10.f/12.f;
             [annotationView addSubview:lblTitle];
         }
-        lblTitle.text = title;
+//        lblTitle.text = title;
     }
 
     UIButton *btn = (UIButton *)annotationView.rightCalloutAccessoryView;
@@ -153,8 +153,8 @@
 #pragma mark - Desc Panel
 - (void)setupDescPanel
 {
-    self.descLabel.text = self.club.trafficGuide;
-    self.descPanel.hidden = self.club.trafficGuide.length == 0 || !self.singleClub;
+//    self.descLabel.text = self.club.trafficGuide;
+//    self.descPanel.hidden = self.club.trafficGuide.length == 0 || !self.singleClub;
     self.descContentVisible = YES;
 }
 
@@ -209,7 +209,7 @@
         [mapView selectAnnotation:view.annotation animated:NO];
     }else{
         if (self.didSelectedClub) {
-            self.didSelectedClub(annotation.club);
+//            self.didSelectedClub(annotation.club);
         }
     }
 }

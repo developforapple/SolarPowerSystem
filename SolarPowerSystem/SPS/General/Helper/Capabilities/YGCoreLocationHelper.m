@@ -7,7 +7,6 @@
 //
 
 #import "YGCoreLocationHelper.h"
-#import "TQLocationConverter.h"
 
 @interface _YGSettingSegue : NSObject <UIAlertViewDelegate>
 - (void)openLocationServiceSetting;
@@ -181,7 +180,7 @@ static NSTimeInterval kAlertInterval = 600.f;
     }];
     
     CLLocationCoordinate2D coordinate = curLocation.coordinate;
-    self.coordinate = [TQLocationConverter transformFromWGSToGCJ:coordinate];
+//    self.coordinate = [TQLocationConverter transformFromWGSToGCJ:coordinate];
     self.hasLocation = YES;
     
     if (self.updateLocationCompletion) {

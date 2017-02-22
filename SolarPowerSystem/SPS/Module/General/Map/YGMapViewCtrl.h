@@ -10,8 +10,8 @@
 
 @interface YGMapViewCtrl : BaseNavController
 
-@property (strong, nonatomic) NSArray<ClubModel *> *clubList;
+@property (strong, nonatomic) NSArray *clubList;
 
-@property (copy, nonatomic) void (^didSelectedClub)(ClubModel *club);
+@property (copy, nonatomic) void (^didSelectedClub)(id club);
 
 @end

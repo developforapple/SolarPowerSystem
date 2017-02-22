@@ -7,6 +7,7 @@
 //
 
 #import "YGSystemImagePicker.h"
+#import <objc/runtime.h>
 
 @interface UIImagePickerController (YGUniqueID)
 @end

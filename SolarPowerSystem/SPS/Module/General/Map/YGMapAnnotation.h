@@ -15,6 +15,6 @@
 @property (copy, nonatomic) NSString *title;
 @property (copy, nonatomic) NSString *subtitle;
 @property (assign, nonatomic) CLLocationCoordinate2D coordinate;
-@property (strong, nonatomic) ClubModel *club;
-+ (NSArray<YGMapAnnotation *> *)annotations:(NSArray<ClubModel *> *)clubList;
+//@property (strong, nonatomic) ClubModel *club;
++ (NSArray<YGMapAnnotation *> *)annotations:(NSArray *)clubList;
 @end

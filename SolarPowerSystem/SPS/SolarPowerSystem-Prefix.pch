@@ -16,11 +16,7 @@
     #include "YGBaseCategories.h"
     #include "YGStatistics.h"
 
-    #import "API.h"
-    #import "Utilities.h"
-
     #import "GolfAppDelegate.h"
-    #import "LoginManager.h"
 
     #import <SVProgressHUD/SVProgressHUD.h>
 #endif

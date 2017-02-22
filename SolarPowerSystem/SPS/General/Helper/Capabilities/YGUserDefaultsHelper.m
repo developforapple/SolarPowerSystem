@@ -78,7 +78,7 @@ NSString *const kYGTAPublishRemberSyncWeixinFlag = @"kYGTAPublishRemberSyncWeixi
 + (NSString *)appendCurrentLoginUserIdInLast:(NSString *)key
 {
     if (key != nil && [key length] > 0) {
-        key = [NSString stringWithFormat:@"%@_%d",key,[LoginManager sharedManager].session.memberId];
+//        key = [NSString stringWithFormat:@"%@_%d",key,[LoginManager sharedManager].session.memberId];
     }
     
     return key;

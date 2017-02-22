@@ -507,8 +507,8 @@ static NSString *kWKWebViewProgressKeyPath = @"estimatedProgress";
             return;
         }
     }else if ([scheme isEqualToString:@"golfapi"]) {
-        NSDictionary *data = [Utilities webLinkParamParser:URL.absoluteString];
-        [[GolfAppDelegate shareAppDelegate] handlePushControllerWithData:data];
+//        NSDictionary *data = [Utilities webLinkParamParser:URL.absoluteString];
+//        [[GolfAppDelegate shareAppDelegate] handlePushControllerWithData:data];
         decisionHandler(WKNavigationActionPolicyCancel);
         return;
     }
