@@ -56,12 +56,6 @@
 		4467E4201E5D6A1300877AD6 /* DDVideoPlayerIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4467E0A31E5D6A1300877AD6 /* DDVideoPlayerIndicatorView.m */; };
 		4467E4211E5D6A1300877AD6 /* YGStatisticsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4467E0A61E5D6A1300877AD6 /* YGStatisticsHelper.m */; };
 		4467E4221E5D6A1300877AD6 /* YGCountdownTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4467E0A91E5D6A1300877AD6 /* YGCountdownTimer.m */; };
-		4467E4251E5D6A1300877AD6 /* AFMInfoBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4467E0B21E5D6A1300877AD6 /* AFMInfoBanner.m */; };
-		4467E4261E5D6A1300877AD6 /* CVKHierarchySearcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 4467E0B41E5D6A1300877AD6 /* CVKHierarchySearcher.m */; };
-		4467E4271E5D6A1300877AD6 /* AGEmojiKeyBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4467E0B81E5D6A1300877AD6 /* AGEmojiKeyBoardView.m */; };
-		4467E4281E5D6A1300877AD6 /* AGEmojiPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4467E0BA1E5D6A1300877AD6 /* AGEmojiPageView.m */; };
-		4467E4291E5D6A1300877AD6 /* AGEmojiSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4467E0BC1E5D6A1300877AD6 /* AGEmojiSegmentedControl.m */; };
-		4467E42A1E5D6A1300877AD6 /* AGEmojiSegmentedControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4467E0BD1E5D6A1300877AD6 /* AGEmojiSegmentedControl.xib */; };
 		4467E4301E5D6A1300877AD6 /* DDAssetCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4467E0CB1E5D6A1300877AD6 /* DDAssetCategory.m */; };
 		4467E4311E5D6A1300877AD6 /* DDAssetsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4467E0CE1E5D6A1300877AD6 /* DDAssetsManager.m */; };
 		4467E4321E5D6A1300877AD6 /* DDAssetsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4467E0D11E5D6A1300877AD6 /* DDAssetsDetailViewController.m */; };
@@ -273,18 +267,6 @@
 		4467E0A61E5D6A1300877AD6 /* YGStatisticsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGStatisticsHelper.m; sourceTree = "<group>"; };
 		4467E0A81E5D6A1300877AD6 /* YGCountdownTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGCountdownTimer.h; sourceTree = "<group>"; };
 		4467E0A91E5D6A1300877AD6 /* YGCountdownTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGCountdownTimer.m; sourceTree = "<group>"; };
-		4467E0B11E5D6A1300877AD6 /* AFMInfoBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFMInfoBanner.h; sourceTree = "<group>"; };
-		4467E0B21E5D6A1300877AD6 /* AFMInfoBanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFMInfoBanner.m; sourceTree = "<group>"; };
-		4467E0B31E5D6A1300877AD6 /* CVKHierarchySearcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVKHierarchySearcher.h; sourceTree = "<group>"; };
-		4467E0B41E5D6A1300877AD6 /* CVKHierarchySearcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVKHierarchySearcher.m; sourceTree = "<group>"; };
-		4467E0B51E5D6A1300877AD6 /* ViewControllerHierarchy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerHierarchy.h; sourceTree = "<group>"; };
-		4467E0B71E5D6A1300877AD6 /* AGEmojiKeyBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGEmojiKeyBoardView.h; sourceTree = "<group>"; };
-		4467E0B81E5D6A1300877AD6 /* AGEmojiKeyBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGEmojiKeyBoardView.m; sourceTree = "<group>"; };
-		4467E0B91E5D6A1300877AD6 /* AGEmojiPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGEmojiPageView.h; sourceTree = "<group>"; };
-		4467E0BA1E5D6A1300877AD6 /* AGEmojiPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGEmojiPageView.m; sourceTree = "<group>"; };
-		4467E0BB1E5D6A1300877AD6 /* AGEmojiSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGEmojiSegmentedControl.h; sourceTree = "<group>"; };
-		4467E0BC1E5D6A1300877AD6 /* AGEmojiSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGEmojiSegmentedControl.m; sourceTree = "<group>"; };
-		4467E0BD1E5D6A1300877AD6 /* AGEmojiSegmentedControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AGEmojiSegmentedControl.xib; sourceTree = "<group>"; };
 		4467E0CA1E5D6A1300877AD6 /* DDAssetCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAssetCategory.h; sourceTree = "<group>"; };
 		4467E0CB1E5D6A1300877AD6 /* DDAssetCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAssetCategory.m; sourceTree = "<group>"; };
 		4467E0CC1E5D6A1300877AD6 /* DDAssetsInclude.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAssetsInclude.h; sourceTree = "<group>"; };
@@ -735,11 +717,8 @@
 		4467E0AF1E5D6A1300877AD6 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				4467E0B01E5D6A1300877AD6 /* AFMInfoBanner */,
-				4467E0B61E5D6A1300877AD6 /* AGEmojiKeyboard */,
 				4467E0C81E5D6A1300877AD6 /* AssetsPicker */,
 				4467E0EB1E5D6A1300877AD6 /* CollectionViewLayout */,
-				4467E0F01E5D6A1300877AD6 /* CycleBannerView */,
 				4467E0F11E5D6A1300877AD6 /* HHProgressView */,
 				4467E0F41E5D6A1300877AD6 /* ILTranslucentView */,
 				4467E0F71E5D6A1300877AD6 /* Line */,
@@ -754,32 +733,6 @@
 				4467E1391E5D6A1300877AD6 /* YGBase */,
 			);
 			path = UI;
-			sourceTree = "<group>";
-		};
-		4467E0B01E5D6A1300877AD6 /* AFMInfoBanner */ = {
-			isa = PBXGroup;
-			children = (
-				4467E0B11E5D6A1300877AD6 /* AFMInfoBanner.h */,
-				4467E0B21E5D6A1300877AD6 /* AFMInfoBanner.m */,
-				4467E0B31E5D6A1300877AD6 /* CVKHierarchySearcher.h */,
-				4467E0B41E5D6A1300877AD6 /* CVKHierarchySearcher.m */,
-				4467E0B51E5D6A1300877AD6 /* ViewControllerHierarchy.h */,
-			);
-			path = AFMInfoBanner;
-			sourceTree = "<group>";
-		};
-		4467E0B61E5D6A1300877AD6 /* AGEmojiKeyboard */ = {
-			isa = PBXGroup;
-			children = (
-				4467E0B71E5D6A1300877AD6 /* AGEmojiKeyBoardView.h */,
-				4467E0B81E5D6A1300877AD6 /* AGEmojiKeyBoardView.m */,
-				4467E0B91E5D6A1300877AD6 /* AGEmojiPageView.h */,
-				4467E0BA1E5D6A1300877AD6 /* AGEmojiPageView.m */,
-				4467E0BB1E5D6A1300877AD6 /* AGEmojiSegmentedControl.h */,
-				4467E0BC1E5D6A1300877AD6 /* AGEmojiSegmentedControl.m */,
-				4467E0BD1E5D6A1300877AD6 /* AGEmojiSegmentedControl.xib */,
-			);
-			path = AGEmojiKeyboard;
 			sourceTree = "<group>";
 		};
 		4467E0C81E5D6A1300877AD6 /* AssetsPicker */ = {
@@ -867,13 +820,6 @@
 				4467E0EF1E5D6A1300877AD6 /* YGReorderableLayout.m */,
 			);
 			path = CollectionViewLayout;
-			sourceTree = "<group>";
-		};
-		4467E0F01E5D6A1300877AD6 /* CycleBannerView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CycleBannerView;
 			sourceTree = "<group>";
 		};
 		4467E0F11E5D6A1300877AD6 /* HHProgressView */ = {
@@ -1618,7 +1564,6 @@
 				4467E5771E5D6A1400877AD6 /* EmojisList.plist in Resources */,
 				4467E58C1E5D6AD000877AD6 /* SolarPowerSystem-Info.plist in Resources */,
 				4467E4361E5D6A1300877AD6 /* DDAssets.storyboard in Resources */,
-				4467E42A1E5D6A1300877AD6 /* AGEmojiSegmentedControl.xib in Resources */,
 				4467E4591E5D6A1400877AD6 /* WebViewJavascriptBridge.js.txt in Resources */,
 				4467E4BE1E5D6A1400877AD6 /* YGGeneral.storyboard in Resources */,
 				4467E5761E5D6A1400877AD6 /* chinesearea.plist in Resources */,
@@ -1697,7 +1642,6 @@
 				4467E4BB1E5D6A1400877AD6 /* YGMapViewCtrl.m in Sources */,
 				4467E4B41E5D6A1400877AD6 /* YGDatePickerCell.m in Sources */,
 				4467E4111E5D6A1300877AD6 /* YGUserDefaultsHelper.m in Sources */,
-				4467E4271E5D6A1300877AD6 /* AGEmojiKeyBoardView.m in Sources */,
 				4467E4651E5D6A1400877AD6 /* YGBaseNavigationController.m in Sources */,
 				4467E3FD1E5D6A1300877AD6 /* NSString+STRegex.m in Sources */,
 				4467E5E11E5D6CAD00877AD6 /* FCUUID.m in Sources */,
@@ -1752,7 +1696,6 @@
 				4467E3F91E5D6A1300877AD6 /* NSDate+Calendar.m in Sources */,
 				4467E4101E5D6A1300877AD6 /* YGRemoteNotificationHelper.m in Sources */,
 				4467E40D1E5D6A1300877AD6 /* YGCapabilityHelper.m in Sources */,
-				4467E4261E5D6A1300877AD6 /* CVKHierarchySearcher.m in Sources */,
 				4467E40B1E5D6A1300877AD6 /* MJRefreshComponent+BugFixed.m in Sources */,
 				4467E4521E5D6A1400877AD6 /* TYPagerController.m in Sources */,
 				4467E4B31E5D6A1400877AD6 /* CustomerServiceViewCtrl.m in Sources */,
@@ -1777,15 +1720,12 @@
 				4467E4301E5D6A1300877AD6 /* DDAssetCategory.m in Sources */,
 				4467E5DD1E5D6CAD00877AD6 /* Base64.m in Sources */,
 				4467E3FE1E5D6A1300877AD6 /* NSString+StringHeight.m in Sources */,
-				4467E4281E5D6A1300877AD6 /* AGEmojiPageView.m in Sources */,
-				4467E4251E5D6A1300877AD6 /* AFMInfoBanner.m in Sources */,
 				4467E43D1E5D6A1300877AD6 /* DDAssetsPreviewCell.m in Sources */,
 				4467E4451E5D6A1300877AD6 /* UIImageView+RefreshGifCategory.m in Sources */,
 				4467E4471E5D6A1300877AD6 /* DDSegmentScrollView.m in Sources */,
 				4467E4211E5D6A1300877AD6 /* YGStatisticsHelper.m in Sources */,
 				4467E4201E5D6A1300877AD6 /* DDVideoPlayerIndicatorView.m in Sources */,
 				4467E4511E5D6A1400877AD6 /* TPFloatRatingView.m in Sources */,
-				4467E4291E5D6A1300877AD6 /* AGEmojiSegmentedControl.m in Sources */,
 				4467E5DE1E5D6CAD00877AD6 /* GTMBase64.m in Sources */,
 				4467E40F1E5D6A1300877AD6 /* YGCoreMotionHelper.m in Sources */,
 				4467E46B1E5D6A1400877AD6 /* LoginParamsModel.m in Sources */,

@@ -18,15 +18,14 @@
 
 static NSString * const kGolfPlus = @"GolfPlus";
 
-@interface GolfAppDelegate () <WXApiDelegate, CLLocationManagerDelegate,UINavigationControllerDelegate,WeiboSDKDelegate,YGLoginViewCtrlDelegate>
+@interface GolfAppDelegate () <WXApiDelegate, CLLocationManagerDelegate,UINavigationControllerDelegate,WeiboSDKDelegate>
 {
     CLLocationManager * _locationManage;
 }
 @end
 
 @implementation GolfAppDelegate{
-    BOOL firstBecomeActive; //注意：应用程序在启动时，在调用了 applicationDidFinishLaunching 方法之后也会调用 applicationDidBecomeActive 方法，所以你要确保你的代码能够分清复原与启动，避免出现逻辑上的bug。所以这里标记一下
-    BOOL toChatProcessing;//当前正在进入聊天对话框的处理
+    
 }
 
 #pragma mark - Application Launching
@@ -47,7 +46,6 @@ static NSString * const kGolfPlus = @"GolfPlus";
     [self setupRemoteNotification:launchOptions];
     
     self.tabBarController = [YGTabBarController defaultController];
-    [self passedValue];
     
     float currVersion = [[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"] floatValue];
     if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"ScanTheGuidPicture"] floatValue] < currVersion) {
@@ -234,328 +232,7 @@ static NSString * const kGolfPlus = @"GolfPlus";
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
-    if (Equal([url scheme], @"yungaogolf")) {
-        
-    }
-    else if (Equal([url scheme], @"wb2911809260")) {
-        return  [WeiboSDK handleOpenURL:url delegate:self];
-    }else if (Equal([url scheme], @"wxb4f02e0ddf46579a")){
-        return  [WXApi handleOpenURL:url delegate:self];
-    }else if ([YGPayThirdPlatformProcessor handleOpenURL:url]){
-        return YES;
-    }else if (Equal([url scheme], @"iosamap")){
-        // ******************
-        return NO;
-    }else if (Equal([url scheme], @"baidumap")){
-        // ******************
-        return NO;
-    }else if (Equal([url scheme], @"golfapi")){
-        NSDictionary *data = [Utilities webInterfaceToDic:url prefix:@"golfapi://?"];
-        [self handlePushControllerWithData:data];
-        return YES;
-    }else{
-        return NO;
-    }
-}
-
--(void) onResp:(BaseResp*)resp
-{
-    if ([resp isKindOfClass:[SendAuthResp class]]) {
-        if (resp.errCode == 0) {
-            SendAuthResp *r = (SendAuthResp*)resp;
-            NSString *code = r.code;
-            if (code.length>0) {
-                [[NSNotificationCenter defaultCenter] postNotificationName:@"AccessTokenCode" object:code];
-            }
-        }
-    }else if ([resp isKindOfClass:[SendMessageToWXResp class]]) {
-        NSString *strMsg = nil;
-        
-        if (self.type > 0) {
-            if (resp.errCode == 0) {
-                // 数据上报采集点
-                if (self.type == 1) {
-                    [[BaiduMobStat defaultStat] logEvent:@"sharePublicClass1" eventLabel:@"公开课查看分享"];
-                    [MobClick event:@"sharePublicClass1" label:@"公开课查看分享"];
-                }else if (self.type == 2){
-                    [[BaiduMobStat defaultStat] logEvent:@"sharePublicClass2" eventLabel:@"公开课报名分享"];
-                    [MobClick event:@"sharePublicClass2" label:@"公开课报名分享"];
-                }
-            }
-        }
-        self.type = 0;
-        BOOL have = NO;
-        switch (resp.errCode) {
-            case 0:
-                have = YES;
-                strMsg = _isInviteNewUser ? @"已邀请" : @"分享成功";
-                break;
-            case -1:
-                have = NO;
-                strMsg = _isInviteNewUser ? @"邀请失败" : @"分享失败";
-                break;
-            case -2:
-                have = NO;
-                strMsg = _isInviteNewUser ? @"取消邀请" : @"您已取消分享";
-                break;
-            case -3:
-                have = NO;
-                strMsg = _isInviteNewUser ? @"邀请失败" : @"分享失败";
-                break;
-            case -4:
-                //strMsg = @"信息分享未取得授权";
-                break;
-            case -5:
-                //strMsg = @"不支持分享功能";
-                break;
-                
-            default:
-                break;
-        }
-        
-        NSDictionary *dictionary;
-        if (resp.errCode==0) {
-            dictionary=[NSDictionary dictionaryWithObject:@([[NSUserDefaults standardUserDefaults]integerForKey:@"reqScene"]) forKey:@"flag"];
-        }else{
-            dictionary=[NSDictionary dictionaryWithObject:@0 forKey:@"flag"];
-        }
-        [[NSNotificationCenter defaultCenter]postNotificationName:@"topicShareOver" object:dictionary];
-        
-        if (strMsg) {
-            if (_isInviteNewUser) {
-                _isInviteNewUser = NO;
-                [[NSNotificationCenter defaultCenter]postNotificationName:@"inviteNewUserInAddressBookFriends" object:@{@"flag":@(resp.errCode + 1)}];
-            }
-            if (have) {
-                [SVProgressHUD showSuccessWithStatus:strMsg];
-            }else{
-                [SVProgressHUD showInfoWithStatus:strMsg];
-            }
-        }
-    }else if ([resp isKindOfClass:[PayResp class]]){
-        [YGPayThirdPlatformProcessor handleWechatResp:(PayResp *)resp];
-    }
-}
-
-- (void)didReceiveWeiboRequest:(WBBaseRequest *)request
-{
-    //NSLog(@"idReceiveWeiboRequest ");
-}
-
-- (void)didReceiveWeiboResponse:(WBBaseResponse *)response
-{
-    NSString *strMsg = nil;
-    BOOL have = NO;
-    switch (response.statusCode) {
-        case 0:
-            have = YES;
-            strMsg = _isInviteNewUser ? @"已邀请" : @"分享成功";
-            break;
-        case -1:
-            have = NO;
-            strMsg = _isInviteNewUser ? @"取消邀请" : @"您已取消分享";
-            break;
-        case -2:
-            have = NO;
-            strMsg = _isInviteNewUser ? @"邀请失败" : @"分享失败";
-            break;
-        case -3:
-            //strMsg = @"信息分享未取得授权";
-            break;
-        case -4:
-            //strMsg = @"不支持分享功能";
-            break;
-            
-        default:
-            break;
-    }
-    
-    NSDictionary *dictionary;
-    if (response.statusCode==0) {
-        dictionary=[NSDictionary dictionaryWithObject:@3 forKey:@"flag"];
-    }else{
-        dictionary=[NSDictionary dictionaryWithObject:@0 forKey:@"flag"];
-    }
-    [[NSNotificationCenter defaultCenter]postNotificationName:@"topicShareOver" object:dictionary];
-    
-    if (strMsg) {
-        if (_isInviteNewUser) {
-            _isInviteNewUser = NO;
-            [[NSNotificationCenter defaultCenter]postNotificationName:@"inviteNewUserInAddressBookFriends" object:@{@"flag":@(response.statusCode + 1)}];
-        }
-        if (have) {
-            [SVProgressHUD showSuccessWithStatus:strMsg];
-        }else{
-            [SVProgressHUD showInfoWithStatus:strMsg];
-        }
-    }
-}
-
-#pragma mark - HTTP Error Solve Methods
-
-/* 异常code
- 100001	请求参数不正确
- 100002	处理请求异常
- 100003	用户session已过期，重新登录
- 100004	用户已经被禁用
- 100005 账号未登录
- 100006	账号已在别处登录
- 100007	用户名或密码错误
- 100008	其他错误，可根据返回消息提示
- */
-
-- (void)solveHttpError:(NSNotification *)notification{
-    HttpErroCodeModel *model = (HttpErroCodeModel *)[notification object];
-    
-    if ([model.errorMsg isEqualToString:@"获取城市天气预报失败"] && model.code == 100008) { //天气预报获取失败就不用再提示了。获取不到没有什么的，不需要弹框告诉用户。
-        return;
-    }
-    
-    if (model.code == 100005 || model.code == 100006){
-        if(!_isShowAlert){
-            if (model && model.errorMsg.length > 0) {
-                [self checkPasswordLogin:model];
-            }
-        }
-    }else if(model.code == 100003){
-        [self checkPasswordLogin:model];
-    }else if (model.code == 100008 || model.code == 100010 || model.code == 100002 || model.code == 100007){//lyf 加了100002 100007 从第一个情况拆了出来，因为需要提示
-        CCAlertView *alt = [[CCAlertView alloc] initWithTitle:@"提示" message:model.errorMsg];
-        [alt addButtonWithTitle:@"确定" block:^{
-            if (model.code == 100007) {
-                [[NSUserDefaults standardUserDefaults] removeObjectForKey:KGolfUserPassword];
-                [[NSUserDefaults standardUserDefaults] synchronize];
-                [[LoginManager sharedManager] loginWithDelegate:(id<YGLoginViewCtrlDelegate>)self.currentController controller:self.currentController animate:YES];
-            }
-        }];
-        [alt show];
-
-    }
-}
-
-- (void)checkPasswordLogin:(HttpErroCodeModel *)model{
-    _isShowAlert = YES;
-    [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(changeTheIsShowAlert) userInfo:nil repeats:NO];
-    [MobClick profileSignOff];
-    NSString *phoneNum = [[NSUserDefaults standardUserDefaults] objectForKey:KGolfSessionPhone];
-    NSString *password = [[NSUserDefaults standardUserDefaults] stringForKey:KGolfUserPassword];
-    if ((phoneNum.length && phoneNum > 0) && (password.length > 0 && password)) {
-        [self autoLoginWithPhone:phoneNum andPassword:password];
-    }else{
-        [LoginManager sharedManager].loginState = NO;
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [[LoginManager sharedManager] loginWithDelegate:(id<YGLoginViewCtrlDelegate>)self.currentController controller:self.currentController animate:YES blockRetrun:^(id a) {
-                _isShowAlert = NO;
-            } cancelReturn:^(id a) {
-                _isShowAlert = NO;
-            }];
-        });
-    }
-}
-
-- (void)changeTheIsShowAlert {
-    _isShowAlert = NO;
-}
-
-- (void)autoLoginWithPhone:(NSString *)phoneNum andPassword:(NSString *)password{
-    [LoginManager sharedManager].loginState = NO;
-    
-    NSString *osName = [[UIDevice currentDevice] systemName];
-    NSString *osVersion = [[UIDevice currentDevice] systemVersion];
-    NSString *appVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
-    
-    LoginParamsModel *model = [[LoginParamsModel alloc] init];
-    model.phoneNum = phoneNum;
-    model.password = password;
-    model.deviceName = [[UIDevice currentDevice] name];
-    model.osName = osName;
-    model.osVersion = [osVersion stringByAppendingFormat:@",%@",appVersion];
-    model.imeiNum = [OpenUDID value];
-    model.latitude = [LoginManager sharedManager].currLatitude;
-    model.longitude = [LoginManager sharedManager].currLongitude;
-    model.deviceToken = [[PINCache sharedCache] objectForKey:WKDeviceTokenKey];
-    
-    [LoginService publicLogin:model needLoading:NO success:^(UserSessionModel *session) {
-        if(session && ![session.sessionId isEqualToString:@""]){
-            NSLog(@"###################自动登录了###################");
-            NSDictionary *dic = [[NSUserDefaults standardUserDefaults] objectForKey:@"wechat_user_info"];
-            if (dic) {
-                NSString *openId = dic[@"openid"];
-                NSString *unionId = dic[@"unionid"];
-                NSString *apendStr = [NSString stringWithFormat:@"%@%@%@",openId,unionId,API_KEY];
-                NSString *groupData = [NSString stringWithFormat:@"%@|%@|%@",openId,unionId,[apendStr md5String]];
-                
-                [[NSUserDefaults standardUserDefaults] setObject:groupData forKey:KGroupData];
-            }
-            [LoginManager sharedManager].session = session;
-            [LoginManager sharedManager].loginState = YES;
-            _isShowAlert = NO;
-            [[SDWebImageManager sharedManager] downloadImageWithURL:[NSURL URLWithString:[LoginManager sharedManager].session.headImage]
-                                                            options:SDWebImageLowPriority
-                                                           progress:nil
-                                                          completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
-                                                              if (image != nil) {
-                                                                  [LoginManager sharedManager].session.imageHead = image;
-                                                              }
-                                                          }];
-            
-            [[NSUserDefaults standardUserDefaults] setObject:session.sessionId forKey:@"GolfSessionID"];
-            [[NSUserDefaults standardUserDefaults] setObject:@(session.memberId) forKey:@"GolfUserID"];
-            [[NSUserDefaults standardUserDefaults] synchronize];
-            //lyf 加
-            if (_tabBarController.isClickedMiddleButton) {
-                [_tabBarController tabBarDidTappedMiddleButton];
-            } else {
-                [[LoginManager sharedManager] loginWithDelegate:(id<YGLoginViewCtrlDelegate>)self.currentController controller:self.currentController animate:YES];
-            }
-        }else{
-            _isShowAlert = NO;
-        }
-    } failure:^(id error) {
-        _isShowAlert = NO;
-    }];
-    
-}
-
-
-- (void)alert:(NSString *)title message:(NSString *)message{
-    
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
-                                                        message:message
-                                                       delegate:self
-                                              cancelButtonTitle:@"知道了"
-                                              otherButtonTitles:nil];
-    alertView.tag = 10001;
-    dispatch_async(dispatch_get_main_queue(), ^(){
-        [alertView show];
-    });
-}
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (alertView.tag == 100) {
-        if (buttonIndex == 1) {
-            [self handlePushNotification:self.notificationUseInfo];
-        }
-    }else if (alertView.tag == 10001){
-        if (buttonIndex == 0) {
-            _isShowAlert = NO;
-        }
-    }else if(alertView.tag == 10002){
-        if (buttonIndex == 0) {
-            _isShowAlert = NO;
-            BaseNavController *controller = [[GolfAppDelegate shareAppDelegate].naviController.viewControllers lastObject];
-            [[LoginManager sharedManager] loginWithDelegate:self controller:controller animate:YES];
-        }
-    }
-}
-
-- (void)showInstruction:(NSString*)url title:(NSString*)title WithController:(UIViewController*)controller{
-    YGIntroViewCtrl *instruction = [[YGIntroViewCtrl alloc] init];
-    instruction.title = title;
-    instruction.isPressentModelView = YES;
-    [instruction loadWebViewWithUrl:url];
-    YGBaseNavigationController *nav = [[YGBaseNavigationController alloc] initWithRootViewController:instruction];
-    [controller presentViewController:nav animated:YES completion:nil];
+    return YES;
 }
 
 #pragma mark - default Application Methods
@@ -563,29 +240,18 @@ static NSString * const kGolfPlus = @"GolfPlus";
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
     [[NSNotificationCenter defaultCenter] postNotificationName:@"systemNewsCount" object:nil];
-    NSLog(@"\n ===> 程序重新激活 !");
-    if (firstBecomeActive) {
-        [self _loginIMEngine];
-    }else{
-        firstBecomeActive = YES;
-    }
-    [self refreshBadgeValue];//刷新约球红点
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
     NSLog(@"\n ===> 程序进入后台 !");
-    [UIApplication sharedApplication].applicationIconBadgeNumber = self.msgCount;
-    self.isFirstEnterPush = YES;
 }
  
--(void)applicationWillTerminate:(UIApplication *)application{//APP从杀死时调用
+-(void)applicationWillTerminate:(UIApplication *)application
+{
     
-    self.msgCount = [[IMCore shareInstance] allUnreadMessagesCountWithOwnerId:[NSString stringWithFormat:@"%d",[LoginManager sharedManager].session.memberId]];//lq 加 私信条数
-    [UIApplication sharedApplication].applicationIconBadgeNumber = self.msgCount;
 }
 
-#pragma mark - 演练
 #pragma mark - 检测网络连接
 - (void)reach
 {
@@ -597,30 +263,11 @@ static NSString * const kGolfPlus = @"GolfPlus";
         NSLog(@"网络发生了变化%tu",status);
         if (self.networkReachabilityStatus <= 0) {
             [[NSNotificationCenter defaultCenter] postNotificationName:@"AFNetworkReachabilityStatusUnknown" object:nil];
-            [[IMCore shareInstance] closeIm];
         }else{
-            [self _loginIMEngine];
-            
-            //需要登录成功状态才可以提交记分卡数据
-            if ([LoginManager sharedManager].loginState) {
-                [self submitCardInfo];
-            }
-            
+
         }
     }];
     [[AFNetworkReachabilityManager sharedManager] startMonitoring];
-}
-
-- (BOOL)notFirstLogin {//lyf 加 app运行没登录
-    if (![LoginManager sharedManager].loginState) {
-        NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-        NSString *groupData = [userDefault objectForKey:KGroupData];
-        if ((([userDefault objectForKey:KGolfSessionPhone] == nil || [userDefault objectForKey:KGolfUserPassword] == nil) && groupData.length <= 0) || ![GolfAppDelegate shareAppDelegate].autoLogIn) {
-            return YES;
-        }
-    }
-    
-    return NO;
 }
 
 -(BOOL)networkReachability{
