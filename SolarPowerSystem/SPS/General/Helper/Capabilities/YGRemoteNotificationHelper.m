@@ -8,7 +8,6 @@
 
 #import "YGRemoteNotificationHelper.h"
 #import <UserNotifications/UserNotifications.h>
-#import <PINCache/PINCache.h>
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored"-Wdeprecated-declarations"
@@ -116,7 +115,7 @@ NS_INLINE UIRemoteNotificationType type_iOS7_And_Earlier(YGNotificaitonType type
         }
         self.deviceTokenStr = string;
         
-        [[PINCache sharedCache] setObject:string forKey:WKDeviceTokenKey];
+//        [[PINCache sharedCache] setObject:string forKey:WKDeviceTokenKey];
         
     }else{
         self.error = error;

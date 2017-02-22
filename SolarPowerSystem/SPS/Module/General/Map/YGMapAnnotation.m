@@ -9,17 +9,17 @@
 #import "YGMapAnnotation.h"
 
 @implementation YGMapAnnotation
-+ (NSArray<YGMapAnnotation *> *)annotations:(NSArray<ClubModel *> *)clubList
++ (NSArray<YGMapAnnotation *> *)annotations:(NSArray *)clubList
 {
     NSMutableArray *list = [NSMutableArray array];
-    for (ClubModel *club in clubList) {
-        YGMapAnnotation *annotation = [YGMapAnnotation new];
-        annotation.title = club.clubName;
-        annotation.subtitle = club.address;
-        annotation.coordinate = CLLC2DMake(club.latitude, club.longitude);
-        annotation.club = club;
-        [list addObject:annotation];
-    }
+//    for (ClubModel *club in clubList) {
+//        YGMapAnnotation *annotation = [YGMapAnnotation new];
+//        annotation.title = club.clubName;
+//        annotation.subtitle = club.address;
+//        annotation.coordinate = CLLC2DMake(club.latitude, club.longitude);
+//        annotation.club = club;
+//        [list addObject:annotation];
+//    }
     return list;
 }
 @end

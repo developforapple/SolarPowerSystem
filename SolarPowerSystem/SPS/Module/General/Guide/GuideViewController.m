@@ -8,7 +8,6 @@
 
 #import "GuideViewController.h"
 #import "EAIntroView.h"
-#import "IndexViewController+VersionUpdates.h"
 
 @interface GuideViewController ()<EAIntroDelegate>
 @property (nonatomic,strong) EAIntroView *intro;
@@ -87,12 +86,6 @@
         [GolfAppDelegate shareAppDelegate].window.rootViewController = [GolfAppDelegate shareAppDelegate].tabBarController;
         [[GolfAppDelegate shareAppDelegate] startRemoteNotification];
         [[GolfAppDelegate shareAppDelegate] startUpdateLocation];
-        
-        BOOL isFirstGetLastVersion = [[NSUserDefaults standardUserDefaults] boolForKey:IDENTIFIER(@"isFirstGetLastVersion")];
-        if (!isFirstGetLastVersion) {
-            IndexViewController *vc = [[IndexViewController alloc] init];
-            [vc getLastVersion];//版本更新
-        }
     }];
 }
 

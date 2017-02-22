@@ -93,12 +93,6 @@
 }
 @end
 
-#import "YGMallViewCtrl.h"
-#import "YGMallCommodityListContainer.h"
-#import "YGMallCartViewCtrl.h"
-#import "ClubHomeController.h"
-#import "TeachHomeTableViewController.h"
-
 @implementation YGPopoverItem
 
 + (instancetype)itemWithType:(YGPopoverItemType)type
@@ -155,53 +149,53 @@
         case YGPopoverItemTypeHome:{
             [navi popToRootViewControllerAnimated:YES];
         }   break;
-        case YGPopoverItemTypeMall:{
-            __kindof UIViewController *vc = CleckViewCtrl([YGMallViewCtrl class]);
-            if (vc) {
-                [navi popToViewController:vc animated:YES];
-            }else{
-                vc = [YGMallViewCtrl instanceFromStoryboard];
-                [navi pushViewController:vc animated:YES];
-            }
-        }   break;
-        case YGPopoverItemTypeMallList:{
-            YGMallCommodityListContainer *vc = CleckViewCtrl([YGMallCommodityListContainer class]);
-            if (vc) {
-                [navi popToViewController:vc animated:YES];
-            }else{
-                [[GolfAppDelegate shareAppDelegate] pushToCommodityWithType:2 dataId:-1 extro:@"" controller:navi.topViewController];
-            }
-        }   break;
-        case YGPopoverItemTypeMallCart:{
-            YGMallCartViewCtrl *vc = CleckViewCtrl([YGMallCartViewCtrl class]);
-            if (vc) {
-                [navi popToViewController:vc animated:YES];
-            }else{
-                [[LoginManager sharedManager] loginIfNeed:navi.topViewController doSomething:^(id data) {
-                    YGMallCartViewCtrl *cartVC = [YGMallCartViewCtrl instanceFromStoryboard];
-                    [navi pushViewController:cartVC animated:YES];
-                }];
-            }
-        }   break;
-        case YGPopoverItemTypeCourseHome:{
-            ClubHomeController *vc = CleckViewCtrl([ClubHomeController class]);
-            if (vc) {
-                [navi popToViewController:vc animated:YES];
-            }else{
-                vc = [ClubHomeController instanceFromStoryboard];
-                [navi pushViewController:vc animated:YES];
-            }
-        }   break;
-        case YGPopoverItemTypeTeachingHome:
-        case YGPopoverItemTypeTeachBookingHome:{
-            TeachHomeTableViewController *vc = CleckViewCtrl([TeachHomeTableViewController class]);
-            if (vc) {
-                [navi popToViewController:vc animated:YES];
-            }else{
-                vc = [TeachHomeTableViewController instanceFromStoryboard];
-                [navi pushViewController:vc animated:YES];
-            }
-        }   break;
+//        case YGPopoverItemTypeMall:{
+//            __kindof UIViewController *vc = CleckViewCtrl([YGMallViewCtrl class]);
+//            if (vc) {
+//                [navi popToViewController:vc animated:YES];
+//            }else{
+//                vc = [YGMallViewCtrl instanceFromStoryboard];
+//                [navi pushViewController:vc animated:YES];
+//            }
+//        }   break;
+//        case YGPopoverItemTypeMallList:{
+//            YGMallCommodityListContainer *vc = CleckViewCtrl([YGMallCommodityListContainer class]);
+//            if (vc) {
+//                [navi popToViewController:vc animated:YES];
+//            }else{
+//                [[GolfAppDelegate shareAppDelegate] pushToCommodityWithType:2 dataId:-1 extro:@"" controller:navi.topViewController];
+//            }
+//        }   break;
+//        case YGPopoverItemTypeMallCart:{
+//            YGMallCartViewCtrl *vc = CleckViewCtrl([YGMallCartViewCtrl class]);
+//            if (vc) {
+//                [navi popToViewController:vc animated:YES];
+//            }else{
+//                [[LoginManager sharedManager] loginIfNeed:navi.topViewController doSomething:^(id data) {
+//                    YGMallCartViewCtrl *cartVC = [YGMallCartViewCtrl instanceFromStoryboard];
+//                    [navi pushViewController:cartVC animated:YES];
+//                }];
+//            }
+//        }   break;
+//        case YGPopoverItemTypeCourseHome:{
+//            ClubHomeController *vc = CleckViewCtrl([ClubHomeController class]);
+//            if (vc) {
+//                [navi popToViewController:vc animated:YES];
+//            }else{
+//                vc = [ClubHomeController instanceFromStoryboard];
+//                [navi pushViewController:vc animated:YES];
+//            }
+//        }   break;
+//        case YGPopoverItemTypeTeachingHome:
+//        case YGPopoverItemTypeTeachBookingHome:{
+//            TeachHomeTableViewController *vc = CleckViewCtrl([TeachHomeTableViewController class]);
+//            if (vc) {
+//                [navi popToViewController:vc animated:YES];
+//            }else{
+//                vc = [TeachHomeTableViewController instanceFromStoryboard];
+//                [navi pushViewController:vc animated:YES];
+//            }
+//        }   break;
     }
 }
 

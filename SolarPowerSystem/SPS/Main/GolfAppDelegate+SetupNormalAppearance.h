@@ -10,9 +10,5 @@
 
 @interface GolfAppDelegate (SetupNormalAppearance)
 - (void)setupNormalAppearance;
-
-- (void)addNewPeopleEnjoy;
-
 - (void)registThirdTools;
-
 @end

@@ -6,7 +6,7 @@
 //  Copyright © 2015 Bo Wang. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseNavController.h"
 
 @interface YGBasePopViewController : BaseNavController
 

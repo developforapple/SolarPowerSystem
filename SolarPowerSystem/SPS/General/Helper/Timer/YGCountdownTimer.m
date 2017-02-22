@@ -57,22 +57,23 @@ static dispatch_queue_t timerQueue;
         self.interval = interval;
         self.callback = callback;
         self.targetTime = targetTime;
-        if ([LoginManager sharedManager].timeInterGab == KDefaultTimeInterGab) {
-            ygweakify(self);
-            [ServerService getServerTimeWithSuccess:^(NSTimeInterval timeInterval) {
-                ygstrongify(self);
-                [LoginManager sharedManager].timeInterGab = timeInterval;
-                
-                [self estimateCountdown];
-                BOOL start = YES;
-                if (startBlock) {
-                    start = startBlock(self);
-                }
-                if (start) {
-                    [self initTimer];
-                }
-            } failure:nil];
-        }else{
+//        if ([LoginManager sharedManager].timeInterGab == KDefaultTimeInterGab) {
+//            ygweakify(self);
+//            [ServerService getServerTimeWithSuccess:^(NSTimeInterval timeInterval) {
+//                ygstrongify(self);
+//                [LoginManager sharedManager].timeInterGab = timeInterval;
+//                
+//                [self estimateCountdown];
+//                BOOL start = YES;
+//                if (startBlock) {
+//                    start = startBlock(self);
+//                }
+//                if (start) {
+//                    [self initTimer];
+//                }
+//            } failure:nil];
+//        }else
+        {
             [self estimateCountdown];
             BOOL start = YES;
             if (startBlock) {
@@ -100,13 +101,13 @@ static dispatch_queue_t timerQueue;
 
 - (void)estimateCountdown
 {
-    NSTimeInterval timeInterGab = [LoginManager sharedManager].timeInterGab;
-    NSTimeInterval now = [[NSDate date] timeIntervalSince1970] + timeInterGab;
-    NSTimeInterval interval = self.targetTime - now;
-    self.countdown = (long long)interval;
-    // 倒计时的小数部分
-    CGFloat delay = interval - self.countdown;
-    self.delay = delay;
+//    NSTimeInterval timeInterGab = [LoginManager sharedManager].timeInterGab;
+//    NSTimeInterval now = [[NSDate date] timeIntervalSince1970] + timeInterGab;
+//    NSTimeInterval interval = self.targetTime - now;
+//    self.countdown = (long long)interval;
+//    // 倒计时的小数部分
+//    CGFloat delay = interval - self.countdown;
+//    self.delay = delay;
 }
 
 - (void)estimateTime
@@ -131,11 +132,11 @@ static dispatch_queue_t timerQueue;
 
 - (void)initTimer
 {
-    NSTimeInterval timeInterGab = [LoginManager sharedManager].timeInterGab;
-    NSLog(@"创建倒计时：\n目标时间：%.0f\n服务器时差：%f\n倒计时：%.1f",self.targetTime,timeInterGab,self.countdown);
-    RunAfter(self.delay, ^{
-        [self startTimer];
-    });
+//    NSTimeInterval timeInterGab = [LoginManager sharedManager].timeInterGab;
+//    NSLog(@"创建倒计时：\n目标时间：%.0f\n服务器时差：%f\n倒计时：%.1f",self.targetTime,timeInterGab,self.countdown);
+//    RunAfter(self.delay, ^{
+//        [self startTimer];
+//    });
 }
 
 - (void)startTimer

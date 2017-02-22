@@ -7,8 +7,6 @@
 //
 
 #import "GolfAppDelegate+SetupNormalAppearance.h"
-#import "AFMInfoBanner.h"
-#import <BeaconAPI_Base/BeaconBaseInterface.h>
 #import "UIKit+yg_IBInspectable.h"
 #import <IQKeyboardManager/IQKeyboardManager.h>
 #import <WeiboSDK.h>
@@ -62,9 +60,6 @@
     
     // 控制器的统一样式，在 UIKit+yg_IBInspectable.h 内 UIViewController 类别下进行设置
     
-    // AFMInfoBanner
-    [[AFMInfoBanner appearance] setInfoBackgroundColor:[UIColor colorWithHexString:@"#FF6D00"]];
-    
     // HUD
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleCustom];
     [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeNone];
@@ -81,37 +76,6 @@
 //    }
 }
 
-- (void)addNewPeopleEnjoy{
-    /**
-     lq 加 添加广告弹窗
-     adsite:弹窗在哪显示 1：表示显示在首页
-     */
-    ygweakify(self);
-    [[API shareInstance] cgitAdWithAdsite:@"1" success:^(id data) {
-        ygstrongify(self);
-        AdBean *adBean = (AdBean *)data;
-        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-        dict = [self dictionary:dict object:adBean.webUrl key:@"webUrl"];
-        dict = [self dictionary:dict object:adBean.innerIndex key:@"innerIndex"];
-        dict = [self dictionary:dict object:adBean.innerIndex2 key:@"innerIndex2"];
-        dict = [self dictionary:dict object:adBean.showPic key:@"showPic"];
-        dict = [self dictionary:dict object:adBean.err key:@"err"];
-        dict = [self dictionary:dict object:@(adBean.jumpType) key:@"jumpType"];
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"NewPeopleEnjoy" object:nil userInfo:dict];
-    } failure:^(Error *error) {
-        
-    }];
-}
-
--(NSMutableDictionary *)dictionary:(NSMutableDictionary *)dict object:(id)object key:(NSString *)key{
-    if (object == nil) {
-        [dict setValue:[NSNull null] forKey:key];
-    }else{
-        [dict setValue:object forKey:key];
-    }
-    return dict;
-}
-
 - (void)registThirdTools{
     
     [MobClick setCrashReportEnabled:YES];
@@ -126,9 +90,6 @@
     
     //微信
     [WXApi registerApp:kWechatAppKey];
-    
-    //灯塔
-    [BeaconBaseInterface setAppKey:kBeaconAppKey];
 }
 
 
