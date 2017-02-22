@@ -53,20 +53,5 @@ typedef NS_ENUM(NSUInteger, YGCoursePoint) {
     YGYueqiuPoint_Detail = 90,  //约球详情
 };
 
-#pragma mark - 动态
-
-#pragma mark - 悦读
-#include "YGYueduStatistics.h"
-
-
-#pragma mark - 商城
-#include "YGMallStatistics.h"
-
-#pragma mark - Teaching
-
-#pragma mark - UserProfile
-
-#pragma mark - 约球
-
 
 #endif /* YGStatistics_h */
